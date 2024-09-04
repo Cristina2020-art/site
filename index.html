@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limbajul de programare C++</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Limbajul de programare C++</h1>
+        <nav>
+            <ul>
+                <li><a href="#lectii">Lectii</a></li>
+                <li><a href="#exemple">Exemple</a></li>
+                <li><a href="#proiecte">Proiecte</a></li>
+                <li><a href="#aplicatii">Aplicatii</a></li>
+                <li><a href="#galerie">Galerie</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="lectii">
+            <h2>Lecții</h2>
+            <p>Aici veți găsi lecții despre limbajul de programare C++:</p>
+            <article>
+                <h3>Introducere în C++</h3>
+                <p>C++ este un limbaj de programare de nivel înalt, dezvoltat de Bjarne Stroustrup în 1979 la Bell Labs. </p>
+                <p>Este cunoscut pentru suportul său pentru programarea orientată pe obiecte (OOP).</p>
+            </article>
+            <article>
+                <h3>Variabile și tipuri de date</h3>
+                <p>În C++, variabilele sunt utilizate pentru a stoca date. </p>
+                <p> Fiecare variabilă trebuie să aibă un tip de date specific, cum ar fi <code>int</code>, <code>float</code>, <code>char</code>, etc.</p>
+            </article>
+            <article>
+                <h3>Structuri de control</h3>
+                <p>C++ suportă diverse structuri de control, cum ar fi <code>if</code>, <code>else</code>, <code>for</code>, <code>while</code>, și <code>switch</code>, pentru a controla fluxul de execuție al programului.</p>
+            </article>
+        </section>
+
+        <section id="exemple">
+            <h2>Exemple</h2>
+            <p>Exemple de cod în C++ pentru a vă ajuta să înțelegeți conceptele.</p>
+            <article>
+                <h3>Exemplu de program "Hello World"</h3>
+                <pre><code>
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Hello, World!" << endl;
+    return 0;
+}
+                </code></pre>
+                <p>Acesta este un exemplu simplu de program care afișează mesajul "Hello, World!" pe ecran.</p>
+            </article>
+            <article>
+                <h3>Calcularea sumei a două numere</h3>
+                <pre><code>
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num1, num2, sum;
+    cout << "Introduceți două numere: ";
+    cin >> num1 >> num2;
+    sum = num1 + num2;
+    cout << "Suma este: " << sum << endl;
+    return 0;
+}
+                </code></pre>
+                <p>Acest program citește două numere introduse de utilizator și afișează suma lor.</p>
+            </article>
+        </section>
+
+        <section id="proiecte">
+            <h2>Proiecte</h2>
+            <p>Proiecte dezvoltate în C++ pentru a vă îmbunătăți abilitățile de programare.</p>
+            <article>
+                <h3>Proiect: Calculator simplu</h3>
+                <p>Un calculator simplu care poate efectua operații de adunare, scădere, înmulțire și împărțire.</p>
+                <pre><code>
+#include <iostream>
+using namespace std;
+
+int main() {
+    char op;
+    float num1, num2;
+    cout << "Introduceți operatorul (+, -, *, /): ";
+    cin >> op;
+    cout << "Introduceți două numere: ";
+    cin >> num1 >> num2;
+
+    switch(op) {
+        case '+':
+            cout << num1 << " + " << num2 << " = " << num1 + num2;
+            break;
+        case '-':
+            cout << num1 << " - " << num2 << " = " << num1 - num2;
+            break;
+        case '*':
+            cout << num1 << " * " << num2 << " = " << num1 * num2;
+            break;
+        case '/':
+            if(num2 != 0)
+                cout << num1 << " / " << num2 << " = " << num1 / num2;
+            else
+                cout << "Împărțirea la zero nu este permisă.";
+            break;
+        default:
+            cout << "Operator invalid.";
+            break;
+    }
+
+    return 0;
+}
+                </code></pre>
+            </article>
+            <article>
+                <h3>Proiect: Joc de ghicit numere</h3>
+                <p>Un joc simplu în care utilizatorul trebuie să ghicească un număr generat aleatoriu de computer.</p>
+                <pre><code>
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    srand(time(0));
+    int numarSecret = rand() % 100 + 1;
+    int incercare;
+    cout << "Ghici numărul (între 1 și 100): ";
+    do {
+        cin >> incercare;
+        if (incercare > numarSecret)
+            cout << "Numărul este prea mare. Încearcă din nou: ";
+        else if (incercare < numarSecret)
+            cout << "Numărul este prea mic. Încearcă din nou: ";
+    } while (incercare != numarSecret);
+
+    cout << "Felicitări! Ai ghicit numărul." << endl;
+    return 0;
+}
+                </code></pre>
+            </article>
+        </section>
+
+        <section id="aplicatii">
+            <h2>Aplicații</h2>
+            <p>Aplicații practice realizate în C++.</p>
+            <article>
+                <h3>Aplicație: Manager de sarcini</h3>
+                <p>O aplicație simplă pentru gestionarea sarcinilor zilnice.</p>
+                <pre><code>
+// Cod simplificat pentru un manager de sarcini
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
+void afisareMeniu() {
+    cout << "1. Adaugă sarcină" << endl;
+    cout << "2. Afișează sarcini" << endl;
+    cout << "3. Ieșire" << endl;
+}
+
+int main() {
+    vector<string> sarcini;
+    int optiune;
+    string sarcina;
+    do {
+        afisareMeniu();
+        cin >> optiune;
+        cin.ignore();
+        switch(optiune) {
+            case 1:
+                cout << "Introduceți sarcina: ";
+                getline(cin, sarcina);
+                sarcini.push_back(sarcina);
+                break;
+            case 2:
+                cout << "Sarcinile tale:" << endl;
+                for (int i = 0; i < sarcini.size(); i++) {
+                    cout << i + 1 << ". " << sarcini[i] << endl;
+                }
+                break;
+            case 3:
+                cout << "La revedere!" << endl;
+                break;
+            default:
+                cout << "Opțiune invalidă. Încercați din nou." << endl;
+                break;
+        }
+    } while (optiune != 3);
+    return 0;
+}
+                </code></pre>
+            </article>
+        </section>
+
+        <section id="galerie">
+            <h2>Galerie</h2>
+            <p>Galerie de imagini și un videoclip despre aplicații in C++.</p>
+            <div class="galerie">
+                <img src="image1.jpeg" alt="Proiect 1">
+                <img src="image2.jpeg" alt="Proiect 2">
+                <img src="image3.jpeg" alt="Proiect 3">
+            </div>
+            <h3>Videoclipuri demonstrative</h3>
+
+<iframe width="550" height="315" src="https://www.youtube.com/embed/nuzIN_kpfAE?start=3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br><br>
+<iframe width="550" height="315" src="https://www.youtube.com/embed/-TkoO8Z07hI?start=11716" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br><br>
+<iframe width="550" height="315" src="https://www.youtube.com/embed/videoseries?list=PL6XxVO5VsLubkARxK8GHYQG3Aini2Ao4u" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br><br>
+
+
+            
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <form id="contact-form">
+                <label for="name">Nume:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Mesaj:</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit">Trimite</button>
+            </form>
+        </section>
+    </main>
+    <br><br><br><br>
+    <footer>
+        <p>&copy; 2024 Limbajul de programare C++</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
